@@ -1,5 +1,5 @@
 .LogoCon {
-  width: 4%;
+  width: 8%;
   margin: 8px;
   margin-left: 43px;
 }
@@ -8,9 +8,9 @@
   align-items: center;
   justify-content: space-between;
   height: 10vh;
-  background-color: white;
+  background-color: black;
   border-style: solid;
-
+  padding-top: 23px;
   border-width: 0px 0px 0.5px 0px;
 }
 .logo {
@@ -33,7 +33,7 @@
 .searchInpu {
   width: 47%;
   height: 5vh;
-  background-color: white;
+  background-color: black;
   border-style: solid;
   color: white;
   padding-left: 23px;
@@ -41,6 +41,6 @@
 }
 .SearchImgIMported {
   width: 100%;
-  background-color: white;
+  background-color: black;
   height: 5vh;
 }

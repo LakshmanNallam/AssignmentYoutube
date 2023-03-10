@@ -1,4 +1,5 @@
-import {BsSearch} from 'react-icons/bs'
+import {Link} from 'react-router-dom'
+
 import context from '../../context/context'
 
 import './index.css'
@@ -13,13 +14,13 @@ const Header = () => (
       }
       return (
         <nav className="NavBarEle">
-          <div className="LogoCon">
+          <Link to="/" className="LogoCon">
             <img
-              src="https://themayanagari.com/wp-content/uploads/2021/01/2-28.jpg"
+              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png"
               className="logo"
               alt="logo"
             />
-          </div>
+          </Link>
           <div className="searchInputCon">
             <input
               value={currentSearchInput}

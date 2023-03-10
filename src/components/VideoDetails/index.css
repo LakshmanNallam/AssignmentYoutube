@@ -19,6 +19,7 @@
   margin-top: 13px;
   display: flex;
   justify-content: space-between;
+  color: white;
 }
 .divBtnCon {
   display: flex;
@@ -28,4 +29,13 @@
 }
 .Likee {
   margin-right: 23px;
+  color: white;
+}
+.btn {
+  border-style: solid;
+  border-color: white;
+  padding: 8px;
+  background-color: red;
+  color: white;
+  border-radius: 13px;
 }

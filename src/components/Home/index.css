@@ -3,7 +3,7 @@
 }
 .LeftCon {
   width: 15%;
-  background-color: white;
+  background-color: black;
   color: black;
   display: flex;
   flex-direction: column;
@@ -15,19 +15,23 @@
 .MainDiv {
   display: flex;
   flex-direction: column;
+  max-height: 100vh;
 }
 .RightCon {
-  background-color: white;
+  padding-top: 43px;
+  background-color: black;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   padding: 23px;
-  overflow: auto;
+  overflow-y: hidden;
 }
 .leftConDetailsRow {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  color: white;
 }
 .BIPLUS {
   margin-right: 13px;

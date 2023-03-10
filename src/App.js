@@ -6,6 +6,7 @@ import LikedVides from './components/LikedVides/index'
 import Saved from './components/Saved'
 import Login from './components/login'
 import context from './context/context'
+import Download from './components/Download'
 import './App.css'
 
 // Replace your code here
@@ -61,6 +62,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/video/:id" component={VideoDetails} />
           <Route exact path="/likedVideos" component={LikedVides} />
+          <Route exact path="/videdownload/:value" component={Download} />
           <Route exact path="/savedVideos" component={Saved} />
         </Switch>
       </context.Provider>

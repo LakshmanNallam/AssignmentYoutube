@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
 import {Link} from 'react-router-dom'
 import {AiOutlineLike} from 'react-icons/ai'
 import {BiListPlus} from 'react-icons/bi'
@@ -14,7 +15,7 @@ const apiStatusConstants = {
 }
 
 class Saved extends Component {
-  state = {isLoading: true, Data: [], apiStatus: apiStatusConstants.initial}
+  state = {Data: [], apiStatus: apiStatusConstants.initial}
 
   componentDidMount() {
     console.log('YES')
@@ -22,7 +23,8 @@ class Saved extends Component {
   }
 
   GetALLDETAILS = async () => {
-    const options = {method: 'GET'}
+    this.setState({apiStatus: apiStatusConstants.inProgress})
+
     const response = await fetch('http://localhost:3000/videos')
     const dataa = await response.json()
     const {Array} = dataa
@@ -36,12 +38,27 @@ class Saved extends Component {
       <context.Consumer>
         {value => {
           const {SavedVidList} = value
+          if (SavedVidList.length === 0) {
+            return (
+              <div className="NOTFOUNDCon">
+                <img
+                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-saved-videos-img.png"
+                  alt="notfound"
+                  className="notfound"
+                />
+              </div>
+            )
+          }
           return Data.map(eachItem => {
             if (SavedVidList.includes(eachItem.id)) {
               return (
                 <div className="SavedVidConDetails">
                   <div className="ImgConHolder">
-                    <img src={eachItem.thumbnail_url} className="imgTHUMbail" />
+                    <img
+                      src={eachItem.thumbnail_url}
+                      className="imgTHUMbail"
+                      alt="thumbnail"
+                    />
                   </div>
                   <div className="RightConinSavedDetials">
                     <p>{eachItem.title}</p>
@@ -55,6 +72,22 @@ class Saved extends Component {
       </context.Consumer>
     )
   }
+
+  renderFailureView = () => (
+    <div className="NOTFOUNDCon">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-saved-videos-img.png"
+        alt="notfound"
+        className="notfound"
+      />
+    </div>
+  )
+
+  renderLoadingView = () => (
+    <div className="loader-container" data-testid="loader">
+      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
+    </div>
+  )
 
   RenderDetial = () => {
     const {apiStatus} = this.state
@@ -78,13 +111,13 @@ class Saved extends Component {
           <div className="LeftCon">
             <Link to="/savedVideos">
               <div className="leftConDetailsRow">
-                <BiListPlus size="30" className="BIPLUS" />
+                <BiListPlus size="30" className="BIPLUS" color="red" />
                 <p>Saved Videos</p>
               </div>
             </Link>
             <Link to="/likedVideos">
               <div className="leftConDetailsRow">
-                <AiOutlineLike size="30" className="BIPLUS" />
+                <AiOutlineLike size="30" className="BIPLUS" color="red" />
                 <p>Liked Videos</p>
               </div>
             </Link>

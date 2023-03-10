@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
-import {AiOutlineLike, AiOutlineDislike} from 'react-icons/ai'
+import {AiOutlineLike} from 'react-icons/ai'
 import {BiListPlus} from 'react-icons/bi'
 import context from '../../context/context'
 import Header from '../Header/index'
@@ -16,7 +16,6 @@ class Home extends Component {
   }
 
   getReponse = async () => {
-    const options = {method: 'GET'}
     const response = await fetch('http://localhost:3000/videos')
     const dataa = await response.json()
     const {Array} = dataa
@@ -43,13 +42,13 @@ class Home extends Component {
                 <div className="LeftCon">
                   <Link to="/savedVideos">
                     <div className="leftConDetailsRow">
-                      <BiListPlus size="30" className="BIPLUS" />
+                      <BiListPlus size="30" className="BIPLUS" color="red" />
                       <p>Saved Videos</p>
                     </div>
                   </Link>
                   <Link to="/likedVideos">
                     <div className="leftConDetailsRow">
-                      <AiOutlineLike size="30" className="BIPLUS" />
+                      <AiOutlineLike size="30" className="BIPLUS" color="red" />
                       <p>Liked Videos</p>
                     </div>
                   </Link>
