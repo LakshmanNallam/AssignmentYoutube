@@ -1,0 +1,33 @@
+.RightConInSaved {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+
+  overflow-y: auto;
+}
+.SavedVidConDetails {
+  width: 90%;
+  background-color: grey;
+  margin-top: 23px;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  padding-left: 23px;
+}
+.RightConinSavedDetials {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 20vh;
+  padding-left: 23px;
+  color: white;
+}
+.ImgConHolder {
+  width: 20%;
+}
+.imgTHUMbail {
+  border-radius: 10px;
+  width: 100%;
+}

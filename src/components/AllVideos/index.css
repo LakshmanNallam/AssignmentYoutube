@@ -1,0 +1,33 @@
+.ConForbOX {
+  width: 30%;
+  padding: 5px;
+  height: 40vh;
+  margin: 10px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+.ThumbnailhOLDER {
+  width: 85%;
+}
+.thumbnauk {
+  width: 100%;
+  border-radius: 13px;
+}
+.ProfileIMg {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.chennelLOgoConHoLDER {
+  width: 10%;
+  margin-right: 23px;
+}
+.imdf {
+  width: 100%;
+}
+
+.title {
+  color: grey;
+}
